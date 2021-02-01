@@ -2,15 +2,20 @@
 
 def merge_sort(arr):
     """Sort the list in-place using the merge sort algorithm."""
+    # [7, 4, 9, 3, 5, 6, 1, 2, 4]
+    #  [     ]  [  ]
     if len(arr) <= 1:
         return # already sorted
  
     # Finding the midpoint of the array
     mid = len(arr) // 2
+    print("mid:", mid)
 
     # Dividing the array elements into 2 halves
     left_side = arr[:mid]
     right_side = arr[mid:]
+    print("left_side:", left_side)
+    print("right_side:", right_side)
 
     # Sorting the first and second half
     merge_sort(left_side)
@@ -34,7 +39,7 @@ def merge_sort(arr):
         i += 1
 
     while j < len(right_side):
-        arr[k] = right_side[i]
+        arr[k] = right_side[j]
         j += 1
 
 def binary_search(arr, elem):
@@ -45,7 +50,8 @@ def binary_search(arr, elem):
   
     while low < high: 
   
-        mid = (high + low) / 2
+        mid = (high + low) // 2
+        print("HERE", mid)
   
         # Check if elem is present at mid 
         if arr[mid] < elem: 
